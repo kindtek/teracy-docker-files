@@ -14,6 +14,11 @@ apt-get update -qy \
 && apt-get clean && rm -rf /var/lib/apt/lists/* \
 ; \
 \
+cd /etc/apt \
+chmod +x sources.list \
+sed -i '52d' sources.list \
+&& sed -i '52d' sources.list
+\
 # Test version is no support('rc' version)
 if [[ "$DOCKER_VERSION" == *"rc"* ]]; then \
     echo >&2 'error: test version is no support'; \
