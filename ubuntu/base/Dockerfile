@@ -16,6 +16,7 @@ ARG ARCH="amd64"
 ARG DOCKER_CHANNEL="stable"
 ARG DOCKER_VERSION="latest"
 ARG DOCKER_COMPOSE_VERSION="1.24.1"
+ARG DOCKER_BUILDER="kindtek"
 
 ADD install.sh ./install.sh
 RUN chmod +x ./install.sh
