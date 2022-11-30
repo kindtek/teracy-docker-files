@@ -17,7 +17,10 @@ apt-get update -qy \
 cd /etc/apt \
 chmod +x sources.list \
 sed -i '52d' sources.list \
-&& sed -i '52d' sources.list
+&& sed -i '52d' sources.list \ 
+systemctl enable docker.service \
+systemctl daemon-reload \
+systemctl start docker.service \
 \
 # Test version is no support('rc' version)
 if [[ "$DOCKER_VERSION" == *"rc"* ]]; then \
