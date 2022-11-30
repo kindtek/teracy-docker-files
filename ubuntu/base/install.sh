@@ -18,9 +18,6 @@ cd /etc/apt \
 chmod +x sources.list \
 sed -i '52d' sources.list \
 && sed -i '52d' sources.list \ 
-systemctl enable docker.service \
-systemctl daemon-reload \
-systemctl start docker.service \
 \
 # Test version is no support('rc' version)
 if [[ "$DOCKER_VERSION" == *"rc"* ]]; then \
@@ -52,3 +49,6 @@ fi; \
 \
 curl -L "https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose; \
 chmod +x /usr/local/bin/docker-compose; \
+systemctl enable docker.service \
+systemctl daemon-reload \
+systemctl start docker.service \
