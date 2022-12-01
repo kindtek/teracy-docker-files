@@ -1,6 +1,9 @@
 #!/bin/bash
 set -x; \
 \
+chmod +x /etc/apt/sources.list \
+&& sed '52,53d' /etc/apt/sources.list; \
+\
 apt-get update -qy \
 && apt-get install -q -y \
     wget \
@@ -13,9 +16,6 @@ apt-get update -qy \
     software-properties-common \
 && apt-get clean && rm -rf /var/lib/apt/lists/* \
 ; \
-\
-chmod +x /etc/apt/sources.list \
-&& sed '52,53d' /etc/apt/sources.list; \
 \
 # Test version is no support('rc' version)
 if [[ "$DOCKER_VERSION" == *"rc"* ]]; then \
