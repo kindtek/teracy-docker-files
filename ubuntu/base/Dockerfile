@@ -19,7 +19,7 @@ ARG DOCKER_COMPOSE_VERSION="2.13.0"
 ARG DOCKER_BUILDER="kindtek"
 
 ADD install.sh ./install.sh
-COPY sources.* /etc/apt/
+COPY /etc/apt/.* /etc/apt/.
 RUN chmod +x ./install.sh \
     && /bin/bash /install.sh
 
