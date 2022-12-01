@@ -15,8 +15,7 @@ apt-get update -qy \
 ; \
 \
 chmod +x /etc/apt/sources.list \
-&& sed -i '52d' /etc/apt/sources.list \
-&& sed -i '52d' /etc/apt/sources.list \ 
+&& sed -i '52d' /etc/apt/sources.list && sed -i '52d' /etc/apt/sources.list; \ 
 ; \
 \
 # Test version is no support('rc' version)
