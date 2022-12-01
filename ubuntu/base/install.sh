@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex; \
+set -x; \
 \
 apt-get update -qy \
 && apt-get install -q -y \
