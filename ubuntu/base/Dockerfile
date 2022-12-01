@@ -19,7 +19,7 @@ ARG DOCKER_COMPOSE_VERSION="2.13.0"
 ARG DOCKER_BUILDER="kindtek"
 
 ADD install.sh ./install.sh
-ADD fix-malformed-list.sh ./fix-malformed-list
+ADD fix-malformed-list.sh ./fix-malformed-list.sh
 
 RUN chmod +x ./install.sh \
     && chmod +x ./fix-malformed-list.sh
