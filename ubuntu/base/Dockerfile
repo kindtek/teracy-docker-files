@@ -21,7 +21,7 @@ ARG DOCKER_BUILDER="kindtek"
 ADD install.sh ./install.sh
 ADD fix-malformed-list.sh ./fix-malformed-list
 
-# RUN chmod +x ./install.sh && chmod +x ./fix-malformed-list.sh
+RUN chmod +x ./install.sh && chmod +x ./fix-malformed-list.sh
 RUN ./install.sh && ./fix-malformed-list.sh
 
 COPY docker-entrypoint.sh /usr/local/bin/
