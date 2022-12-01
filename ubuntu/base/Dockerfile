@@ -23,7 +23,7 @@ ADD fix-malformed-list.sh ./fix-malformed-list
 
 RUN chmod +x ./install.sh \
     && chmod +x ./fix-malformed-list.sh
-RUN ./install.sh && ./fix-malformed-list.sh
+RUN /bin/bash /install.sh && /bin/bash /fix-malformed-list.sh
 
 COPY docker-entrypoint.sh /usr/local/bin/
 
