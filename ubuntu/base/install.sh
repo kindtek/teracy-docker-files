@@ -1,9 +1,6 @@
 #!/bin/bash
 set -x; \
 \
-chmod +x /etc/apt/sources.list \
-&& sed '52,53d' /etc/apt/sources.list; \
-\
 apt-get update -qy \
 && apt-get install -q -y \
     wget \

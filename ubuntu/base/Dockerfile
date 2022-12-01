@@ -19,6 +19,8 @@ ARG DOCKER_COMPOSE_VERSION="2.13.0"
 ARG DOCKER_BUILDER="kindtek"
 
 ADD install.sh ./install.sh
+RUN chmod +x ./etc/apt/sources.list \
+    && sed '52,53d' /etc/apt/sources.list
 RUN chmod +x ./install.sh
 RUN ./install.sh
 
